@@ -3,7 +3,7 @@ from flask import session as login_session
 import pyrebase
 
 
-Config = {
+config = {
   "apiKey": "AIzaSyBSI-iNkNgm0yHq-EHFOq7LpKmL3rdOMrE",
   "authDomain": "nefashot-proj.firebaseapp.com",
   "projectId": "nefashot-proj",
@@ -29,6 +29,7 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 
 
 #end coding
+
 
 if __name__ == '__main__':
   app.run(debug=True)
