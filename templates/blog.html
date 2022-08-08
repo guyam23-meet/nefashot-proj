@@ -16,12 +16,13 @@
     	</div>
     <br>	
 	</form>
+	{%if message[i]['msg'] != ""%}
 	{%for i in message%}
-	<div class="center">
+        
     			<p>{{message[i]['msg']}}</p>
+        
         {%endfor%}
-    	</div>
-    	</div>
+        {%endif%}
     	<br><br>
 </body>
 </html>
