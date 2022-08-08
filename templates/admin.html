@@ -22,7 +22,12 @@
 						<center>
 							<p style="color:green;text-decoration:underline;">signed in as admin</p>
 						</center>
+						{%elif admin%}
+						<center>
+							<p style="color:red;text-decoration:underline;">False Password</p>
+						</center>
 						{%endif%}
+
 						<form method="post" class="mx-1 mx-md-4" action="/admin">
 										<!--password-->
 							<div class="d-flex flex-row align-items-center mb-4">
