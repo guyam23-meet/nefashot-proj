@@ -45,7 +45,7 @@ def admin():
 			return render_template('admin.html',password=False,admin=login_session['admin'])
 	return render_template('admin.html',admin=login_session['admin'],password=True)
 
-@app.route('/blog', methods=['GET', 'POST'])
+@app.route('/remove', methods=['GET', 'POST'])
 def remove(i):
   db.child('Messages').child(i).set(None)
   return redirect(url_for('blog'))
