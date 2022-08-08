@@ -20,7 +20,7 @@
 	{%if message%}
 	{%for i in message%}
 	
-        {%if admin%}
+        {%if admin == True%}
     			
     			<button onclick = "remove('i')">Remove Post</button>
     		{%endif%}
