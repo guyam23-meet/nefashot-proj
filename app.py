@@ -24,7 +24,8 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 
 
 #start coding
-
+global is_admin
+is_admin=False
 
 @app.route('/blog', methods=['GET', 'POST'])
 def blog():
@@ -32,8 +33,18 @@ def blog():
     if request.form['msg'] != "":
       message = {"msg" : request.form['msg']}
       db.child('Messages').push(message)
-      return render_template('blog.html', message = db.child('Messages').get().val())
-  return render_template('blog.html', message = db.child('Messages').get().val())
+      return render_template('blog.html', message = db.child('Messages').get().val(),is_admin=is_admin)
+  return render_template('blog.html', message = db.child('Messages').get().val(),is_admin=is_admin)
+
+@app.route('/admin',mothods=['POST','GET'])
+def admin():
+  password="nefashot_admin123"
+  if request.method='POST':
+    if request.form['password']==password:
+      is_admin=True
+  return render_template('admin.html',is_admin=is_admin)
+
+
 
 #end coding
 
