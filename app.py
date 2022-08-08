@@ -30,8 +30,11 @@ def home():
 	login_session['admin']=False
   return render_template('about.html')
 
+
 @app.route('/blog', methods=['GET', 'POST'])
 def blog():
+	if 'admin' not in login_session:
+		login_session['admin'] = False
 	if request.method == 'POST':
 		if request.form['msg'] != "":
 			message = {"msg" : request.form['msg']}
@@ -50,8 +53,8 @@ def admin():
 
 @app.route('/remove', methods=['GET', 'POST'])
 def remove(i):
-  db.child('Messages').child(i).remove()
-  return redirect(url_for('blog'))
+	db.child('Messages').child(i).remove()
+	return redirect(url_for('blog'))
 
 #end coding
 
