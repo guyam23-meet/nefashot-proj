@@ -37,12 +37,13 @@ def blog():
 @app.route('/admin',methods=['POST','GET'])
 def admin():
 	login_session['admin']=False
-
 	password="nefashot_admin123"
 	if request.method=='POST':
 		if request.form['password']==password:
 			login_session['admin']=True
-	return render_template('admin.html',admin=login_session['admin'])
+		else:
+			return render_template('admin.html',password=False,admin=login_session['admin'])
+	return render_template('admin.html',admin=login_session['admin'],password=True)
 
 
 
