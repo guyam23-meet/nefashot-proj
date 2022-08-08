@@ -17,7 +17,7 @@
     	</div>
     <br>	
 	</form>
-	 
+	{%if list(message.keys()).len()!=0%}
 	{%for i in message%}
         {%if admin%}
     			<p>{{message[i]['msg']}}</p>
@@ -25,6 +25,7 @@
     		{%endif%}
         <p>{{message[i]['msg']}}</p>
         {%endfor%}
+    {%endif%}
    	<br><br>
 </body>
 </html>
