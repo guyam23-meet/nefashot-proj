@@ -15,7 +15,7 @@ config = {
 }
 
 
-firebase= pyrebase.initialize_app(Config)
+firebase= pyrebase.initialize_app(config)
 auth = firebase.auth()
 db = firebase.database()
 
@@ -27,13 +27,13 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 
 
 @app.route('/blog', methods=['GET', 'POST'])
-def programming():
+def blog():
   if request.method == 'POST':
     if request.form['msg'] != "":
       message = {"msg" : request.form['msg']}
       db.child('Messages').push(message)
-      return render_template('programming.html', message = db.child('Messages').get().val())
-  return render_template('programming.html', message = db.child('Messages').get().val())
+      return render_template('blog.html', message = db.child('Messages').get().val())
+  return render_template('blog.html', message = db.child('Messages').get().val())
 
 #end coding
 
