@@ -22,7 +22,7 @@
 	
         {%if admin == True%}
     			
-    			<button onclick = "remove('i')">Remove Post</button>
+    			<button onclick = "remove({{i}})">Remove Post</button>
     		{%endif%}
         <p>{{message[i]['msg']}}</p>
         
