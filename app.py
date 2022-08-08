@@ -24,7 +24,7 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 
 
 #start coding
-
+login_session['admin']=False
 @app.route('/blog', methods=['GET', 'POST'])
 def blog():
 	if request.method == 'POST':
