@@ -28,7 +28,7 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 @app.route('/', methods=['GET', 'POST'])
 def home():
 	login_session['admin']=False
-  return render_template('about.html')
+	return render_template('about.html')
 
 
 @app.route('/blog', methods=['GET', 'POST'])
@@ -51,7 +51,7 @@ def admin():
 			login_session['admin']=True
 	return render_template('admin.html',admin=login_session['admin'])
 
-@app.route('/remove', methods=['GET', 'POST'])
+@app.route('/remove/<string:i>', methods=['GET', 'POST'])
 def remove(i):
 	db.child('Messages').child(i).remove()
 	return redirect(url_for('blog'))
