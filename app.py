@@ -36,7 +36,7 @@ def blog():
 			return render_template('blog.html', message = db.child('Messages').get().val(),is_admin=is_admin)
 	return render_template('blog.html', message = db.child('Messages').get().val(),is_admin=is_admin)
 
-@app.route('/admin',mothods=['POST','GET'])
+@app.route('/admin',methods=['POST','GET'])
 def admin():
 	password="nefashot_admin123"
 	if request.method=='POST':
