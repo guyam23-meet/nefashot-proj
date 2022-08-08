@@ -26,7 +26,14 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 #start coding
 
 
-
+@app.route('/blog', methods=['GET', 'POST'])
+def programming():
+  if request.method == 'POST':
+    if request.form['msg'] != "":
+      message = {"msg" : request.form['msg']}
+      db.child('Messages').push(message)
+      return render_template('programming.html', message = db.child('Messages').get().val())
+  return render_template('programming.html', message = db.child('Messages').get().val())
 
 #end coding
 
