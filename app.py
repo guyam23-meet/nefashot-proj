@@ -42,7 +42,7 @@ def admin():
 	if request.method=='POST':
 		if request.form['password']==password:
 			is_admin=True
-	return render_template('admin.html',is_admin=is_admin)
+	return render_template('admin.html',admin=is_admin)
 
 
 
