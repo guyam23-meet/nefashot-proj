@@ -27,6 +27,7 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+	login_session['admin']=False
   return render_template('about.html')
 
 @app.route('/blog', methods=['GET', 'POST'])
