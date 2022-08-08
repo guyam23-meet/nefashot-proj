@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -16,13 +17,14 @@
     	</div>
     <br>	
 	</form>
-	<!--{%if message[i]['msg'] != ""%}
+	 
 	{%for i in message%}
-        
+        {%if admin%}
     			<p>{{message[i]['msg']}}</p>
-        
+    			<button onclick = "">Remove Post</button>
+    		{%endif%}
+        <p>{{message[i]['msg']}}</p>
         {%endfor%}
-        {%endif%}
-    	<br><br>-->
+   	<br><br>
 </body>
 </html>
