@@ -47,7 +47,7 @@ def admin():
 
 @app.route('/blog', methods=['GET', 'POST'])
 def remove(i):
-  db.child('Messages').child(i)['msg'].remove()
+  db.child('Messages').child(i).set(None)
   return redirect(url_for('blog'))
 
 #end coding
