@@ -24,7 +24,7 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 
 
 #start coding
-login_session['admin']=False
+
 @app.route('/blog', methods=['GET', 'POST'])
 def blog():
 	if request.method == 'POST':
@@ -36,6 +36,8 @@ def blog():
 
 @app.route('/admin',methods=['POST','GET'])
 def admin():
+	login_session['admin']=False
+
 	password="nefashot_admin123"
 	if request.method=='POST':
 		if request.form['password']==password:
