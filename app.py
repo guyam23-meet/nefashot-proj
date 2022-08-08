@@ -45,7 +45,9 @@ def admin():
 			return render_template('admin.html',password=False,admin=login_session['admin'])
 	return render_template('admin.html',admin=login_session['admin'],password=True)
 
-
+def remove(i):
+  message = db.child('Messages').get().val()
+  message[i]['msg'].remove()
 
 #end coding
 
