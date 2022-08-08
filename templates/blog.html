@@ -17,15 +17,17 @@
     	</div>
     <br>	
 	</form>
-	{%if list(message.keys()).len()!=0%}
+	{%if message%}
 	{%for i in message%}
+	
         {%if admin%}
     			
     			<button onclick = "">Remove Post</button>
     		{%endif%}
         <p>{{message[i]['msg']}}</p>
+        
         {%endfor%}
-    {%endif%}
+        {%endif%}
    	<br><br>
 </body>
 </html>
