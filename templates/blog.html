@@ -27,6 +27,40 @@
   	#header{
   		background-color: grey;
   	}
+
+  		.speech {
+    position: relative;
+    background: grey;
+    color: white;
+    display: inline-block;
+    border-radius: 0;
+    padding: 12px 20px;
+}
+.speech:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid grey;
+    margin: 15px 0 0 -6px;
+}
+
+.speech .media-heading {
+    font-size: 1.2em;
+    color: #317787;
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-weight: 300;
+}
+
+  	}
   </style>
 
 </head>
@@ -88,16 +122,21 @@
 	</form>
 	{%if message%}
 	{%for i in message%}
+		<div class = "speech">
+
 	
         {%if admin == True%}
     			
     			<a href = "remove/{{i}}"><button>Remove Post</button></a>
     		{%endif%}
         <p>{{message[i]['msg']}}</p>
-        
+        </div>
+            	<br><br>
+
         {%endfor%}
         {%endif%}
-   	<br><br>
+       
    </center>
+
 </body>
 </html>
