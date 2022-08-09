@@ -29,6 +29,7 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 def home():
 	if not ('admin' in login_session):
 		login_session['admin']=False
+	login_session['admin']=False
 	return render_template('about.html')
 
 
