@@ -80,6 +80,9 @@ def volunteer():
 
 @app.route('/schedule',methods=['POST','GET'])
 def schedule():
+	if request.form=='POST':
+		period=db.child('periods').get().val()
+		
 	return render_template('schedule.html',schedule=db.child('schedule').get().val(),periods=db.child('periods').get().val(),admin=db.get().val()['admin'])
 #end coding
 
