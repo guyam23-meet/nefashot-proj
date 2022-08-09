@@ -65,8 +65,7 @@ def remove(i):
 
 @app.route('/contact',methods=['POST','GET'])
 def contact():
-	if request.method=='POST':
-		return render_template('contact.html')
+	return render_template('contact.html',schedule=db.child('schedule').get().val(),periods=db.child('periods').get().val())
 
 @app.route('/volunteer', methods=['POST', 'GET'])
 def volunteer():
