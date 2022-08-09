@@ -44,12 +44,15 @@ def blog():
 
 @app.route('/admin',methods=['POST','GET'])
 def admin():
+	failed_password=False
 	login_session['admin']=False
 	password="123"
-	if request.method=='POST':
+	if request.metfhod=='POST':
 		if request.form['password']==password:
 			login_session['admin']=True
-	return render_template('admin.html',admin=login_session['admin'])
+		else:
+			failed_password=True
+	return render_template('admin.html',admin=login_session['admin'],failed_password=failed_password)
 
 @app.route('/remove/<string:i>', methods=['GET', 'POST'])
 def remove(i):
