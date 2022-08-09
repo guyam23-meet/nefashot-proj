@@ -65,7 +65,7 @@ def remove(i):
 
 @app.route('/contact')
 def contact():
-	return render_template('contact.html')
+	return render_template('unused.html')
 
 #end coding
 
