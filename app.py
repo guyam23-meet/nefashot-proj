@@ -68,9 +68,9 @@ def contact():
 	if request.method=='POST':
 		return render_template('contact.html')
 
-@app.route('/volunteer'), methods['POST', 'GET']
+@app.route('/volunteer', methods=['POST', 'GET'])
 def volunteer():
-	if method == 'POST':
+	if request.method == 'POST':
 		name = request.form['full_name']
 		street = request.form['street']
 		zipcode = request.form['zip']
@@ -78,8 +78,8 @@ def volunteer():
 		email = request.form['your_email']
 		info = {"name": name, "street": street, "zipcode": zipcode, "phone": phone}
 		db.child("Volunteers").push(info)
-		return render_template('info.html', db.child("Volunteers").get().val())
-	return render_template('info.html', db.child("Volunteers").get().val())
+		return render_template('info.html', volunteers = db.child("Volunteers").get().val())
+	return render_template('info.html', volunteers = db.child("Volunteers").get().val())
 
 @app.route('/schedule')
 def schedule():
