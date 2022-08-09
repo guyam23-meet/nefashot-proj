@@ -27,10 +27,15 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-  return render_template('about.html')
+	if not ('admin' in login_session):
+		login_session['admin']=False
+	return render_template('about.html')
+
 
 @app.route('/blog', methods=['GET', 'POST'])
 def blog():
+	if not ('admin' in login_session):
+		login_session['admin'] = False
 	if request.method == 'POST':
 		if request.form['msg'] != "":
 			message = {"msg" : request.form['msg']}
@@ -40,17 +45,27 @@ def blog():
 
 @app.route('/admin',methods=['POST','GET'])
 def admin():
+	failed_password=False
 	login_session['admin']=False
 	password="123"
 	if request.method=='POST':
 		if request.form['password']==password:
 			login_session['admin']=True
-	return render_template('admin.html',admin=login_session['admin'])
+		else:
+			failed_password=True
+	return render_template('admin.html',admin=login_session['admin'],failed_password=failed_password)
 
-@app.route('/remove', methods=['GET', 'POST'])
+@app.route('/remove/<string:i>', methods=['GET', 'POST'])
 def remove(i):
-  db.child('Messages').child(i).remove()
-  return redirect(url_for('blog'))
+	db.child('Messages').child(i).remove()
+	return redirect(url_for('blog'))
+
+
+
+
+@app.route('/contact')
+def contact():
+	return render_template('contact.html')
 
 #end coding
 
