@@ -73,7 +73,7 @@ def volunteer():
 		zipcode = request.form['zip']
 		phone = request.form['phone']
 		email = request.form['your_email']
-		info = {"name": name, "street": street, "zipcode": zipcode, "phone": phone}
+		info = {"name": name, "age": street, "zipcode": zipcode, "phone": phone}
 		db.child("Volunteers").push(info)
 		return render_template('info.html', volunteers = db.child("Volunteers").get().val())
 	return render_template('info.html', volunteers = db.child("Volunteers").get().val())
