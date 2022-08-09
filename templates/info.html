@@ -6,45 +6,53 @@
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- Font-->
-	<link rel="stylesheet" type="text/css" href="static/css/montserrat-font.css">
-	<link rel="stylesheet" type="text/css" href="static/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
-	<!-- Main Style Css -->
-    <link rel="stylesheet" href="static/css/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ 
 </head>
 <body class="form-v10">
-	<form action="/volunteer" method="POST">
+	<form action="/volunteer" class="mx-1 mx-md-4" method="POST">
+		<center>
 	
-				<div class="form-right">
-					<h2>Contact Details</h2>
-					<div class="form-row">
-						<input type="text" name="full_name" class="street" id="street" placeholder="Full Name" required>
-					</div>
-					<div class="form-row">
-						<input type="text" name="street" class="additional" id="additional" placeholder="Street Name" required>
-					</div>
-					<div class="form-group">
-						<div class="form-row form-row-1">
-							<input type="text" name="zip" class="zip" id="zip" placeholder="Zip Code" required>
-						</div>
-					</div>
-					<div class="form-row">
-						
-					</div>
-					<div class="form-group">
-						<div class="form-row form-row-2">
-							<input type="text" name="phone" class="phone" id="phone" placeholder="Phone Number" required>
-						</div>
-					</div>
-					<div class="form-row">
-						<input type="text" name="your_email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Your Email">
-					</div>
+				<div class="d-flex flex-row align-items-center mb-4">
+				<i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+					<div class="form-outline flex-fill mb-0">
+					<h2>Volunteer Contact Details</h2>
+						<input type="text" name="full_name" class="form-control" id="name" placeholder="Full Name" required>
+					</div></div>
 
-					<div class="form-row-last">
+					<div class="d-flex flex-row align-items-center mb-4">
+				<i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+					<div class="form-outline flex-fill mb-0">
+						<input type="text" name="street" class="form-control" id="additional" placeholder="Age" required>
+					</div></div>
+					<div class="d-flex flex-row align-items-center mb-4">
+				<i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+					<div class="form-outline flex-fill mb-0">
+							<input type="text" name="zip" class="form-control" id="zip" placeholder="Zip Code" required>
+						</div>
+					</div>
+				
+				<div class="d-flex flex-row align-items-center mb-4">
+				<i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+					<div class="form-outline flex-fill mb-0">
+							<input type="text" name="phone" class="form-control" id="phone" placeholder="Phone Number" required>
+						</div>
+					</div>
+					<div class="d-flex flex-row align-items-center mb-4">
+				<i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+					<div class="form-outline flex-fill mb-0">
+						<input type="text" name="your_email" id="your_email" class="form-control" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Your Email">
+					</div>
+				</div>
+
+					<div class="d-flex flex-row align-items-center mb-4">
+				<i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+					<div class="form-outline flex-fill mb-0">
 						<input type="submit" name="register" class="register" value="Register as Volunteer">
 					</div>
 				</div>
 			</form>
-		</div>
-	</div>
+		</center>
+		
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
