@@ -12,26 +12,54 @@
 	</center>
 		<table border="5" cellspacing="0" align="center">
 		<!--<caption>Timetable</caption>-->
+		{%if admin==True%}
+			<form name="form1" method='POST' action='/contact'>
+		{%endif%}
 		<tr>
 			<td align="center" height="50"
 				width="100"><br>
 				<b>Day/Period</b></br>
 			</td>
-			<!--period is times dictionary with peroid# as key and time as value-->
-			{%for i in periods%}
-				<td align="center" id="{{i}}" height="50" width="100"><b>{{i}}<br>{{periods[i] }}</b></td>
-			{%endfor%}
-			
-		</tr>
-		<!--schedule is a dictionary with dates as keys and list of activitys as values-->
-		{%for i in schedule%}
-			<tr>
-				<td align="center" id="{{i}}" height="50"><b>{{i}}</b></td>
-				{%for k in range(7)%}
-					<td align="center" id="{{i}}{{k}}" height="50">{{schedule[i][k]}}</td>
+			{%if admin==False%}
+				{%for i in periods%}
+					<td align="center" height="50" width="100">
+					<b>{{i}}<br>{{periods[i]}}</b>
+					</td>
 				{%endfor%}
-			</tr>
-		{%endfor%}
+			{%else%}
+				
+				{%for i in periods%}
+					<td align="center" height="50" width="100">
+						<b>{{i}}</b>
+						</br>
+						<input type="text" name="{{i}}" placeholder="{{periods[i]}}" style="width:90%;">
+					</td>
+				{%endfor%}
+			{%endif%}
+		</tr>
+		{%if admin==False%}
+			{%for i in schedule%}
+				<tr>
+					<td align="center" id="{{i}}" height="50"><b>{{i}}</b></td>
+					{%for k in range(7)%}
+						<td align="center" id="{{i}}{{k}}" height="50">
+							{{schedule[i][k]}}
+						</td>
+					{%endfor%}
+				</tr>
+			{%endfor%}
+		{%else%}
+			{%for i in schedule%}
+				<tr>
+					<td align="center" height="50"><b>{{i}}</b></td>
+					{%for k in range(7)%}
+						<td align="center"height="50">
+							<input type="text" name="{{i}}{{k}}" placeholder="{{schedule[i][k]}}" style="width:90%;">
+						</td>
+					{%endfor%}
+				</tr>
+			{%endfor%}
+		{%endif%}
 	</table>
 </body>
 </html>
