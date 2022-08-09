@@ -59,6 +59,13 @@ def remove(i):
 	db.child('Messages').child(i).remove()
 	return redirect(url_for('blog'))
 
+
+
+
+@app.route('/contact')
+def contact():
+	return render_template('contact.html')
+
 #end coding
 
 
