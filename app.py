@@ -67,6 +67,13 @@ def remove(i):
 def contact():
 	return render_template('contact.html')
 
+@app.route('/volunteer')
+def volunteer():
+	return render_template('volunteer.html')
+
+@app.route('/schedule')
+def schedule():
+	return render_template('schedule.html')
 #end coding
 
 
