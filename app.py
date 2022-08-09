@@ -47,7 +47,7 @@ def admin():
 	failed_password=False
 	login_session['admin']=False
 	password="123"
-	if request.metfhod=='POST':
+	if request.method=='POST':
 		if request.form['password']==password:
 			login_session['admin']=True
 		else:
