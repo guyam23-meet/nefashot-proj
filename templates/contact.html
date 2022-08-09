@@ -18,118 +18,20 @@
 				<b>Day/Period</b></br>
 			</td>
 			<!--period is times dictionary with peroid# as key and time as value-->
-			{%for i in period%}
-				<td align="center" id="{{i}}" height="50" width="100"><b>{{i}}<br>{{period}}</b></td>
+			{%for i in periods%}
+				<td align="center" id="{{i}}" height="50" width="100"><b>{{i}}<br>{{periods[i] }}</b></td>
 			{%endfor%}
-			<!-- <td align="center" height="50"
-				width="100">
-				<b>I<br>{{I}}</b>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>II<br>{{II}}</b>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>III<br>{{III}}</b>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>IV<br>{{IV}}</b>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>V<br>{{V}}</b>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>VI<br>{{VI}}</b>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>VII<br>{{VII}}</b>
-			</td> -->
+			
 		</tr>
 		<!--schedule is a dictionary with dates as keys and list of activitys as values-->
 		{%for i in schedule%}
 			<tr>
 				<td align="center" id="{{i}}" height="50"><b>{{i}}</b></td>
-				{%for k in range(6)%}
+				{%for k in range(7)%}
 					<td align="center" id="{{i}}{{k}}" height="50">{{schedule[i][k]}}</td>
 				{%endfor%}
 			</tr>
 		{%endfor%}
-		<!-- <tr>
-			<td align="center" height="50">
-				<b>Sunday</b></td>
-			<td align="center" height="50">welcoming</td>
-			<td align="center" height="50">breakfast</td>
-			<td align="center" height="50">breaking the ice</td>
-			<td align="center" height="50">talk</td>
-			<td align="center" height="50">talk</td>
-			<td align="center" height="50">talk</td>
-			<td align="center" height="50">saying bye+cleaning</td>
-		</tr>
-		<tr>
-			<td align="center" height="50">
-				<b>Monday</b>
-			</td>
-			<td align="center" height="50">art activity</td>
-			<td align="center" height="50">art activity</td>
-			<td align="center" height="50">art activity</td>
-			<td align="center" height="50">food</td>
-			<td align="center" height="50">talk</td>
-			<td align="center" height="50">fun activity</td>
-			<td align="center" height="50">feedback +cleaning</td>
-		</tr>
-		<tr>
-			<td align="center" height="50">
-				<b>Tuesday</b>
-			</td>
-			<td align="center" height="50">gathering</td>
-			<td align="center" height="50">breakfast</td>
-			<td align="center" height="50">talk</td>
-			<td align="center" height="50">activity</td>
-			<td align="center" height="50">art activity</td>
-			<td align="center" height="50">art activity</td>
-			<td align="center" height="50">art activity</td>
-		</tr>
-		<tr>
-			<td align="center" height="50">
-				<b>Wednesday</b>
-			</td>
-			<td align="center" height="50">gathering</td>
-			<td align="center" height="50">food</td>
-			<td align="center" height="50">talk</td>
-			<td align="center" height="50">art activity</td>
-			<td align="center" height="50">art activity</td>
-			<td align="center" height="50">art activity</td>
-			<td align="center" height="50">food+ breaking the ice</td>
-		</tr>
-		<tr>
-			<td align="center" height="50">
-				<b>Thursday</b>
-			</td>
-			<td align="center" height="50">art activity</td>
-			<td align="center" height="50">art activity</td>
-			<td align="center" height="50">art activity</td>
-			<td align="center" height="50">food</td>
-			<td align="center" height="50">fun facts</td>
-			<td align="center" height="50">bye bye</td>
-			<td align="center" height="50">cleaning </td>
-		</tr>
-		<tr>
-			<td align="center" height="50">
-				<b>Friday</b>
-			</td>
-			<td align="center" height="50">{{f1}}</td>
-			<td align="center" height="50">{{f2}}</td>
-			<td align="center" height="50">{{f3}}</td>
-			<td align="center" height="50">{{f4}}</td>
-			<td align="center" height="50">{{f5}}</td>
-			<td align="center" height="50">{{f6}}</td>
-			<td align="center" height="50">{{f7}}</td>
-		</tr> -->
 	</table>
 </body>
 </html>
