@@ -9,7 +9,7 @@ config = {
 	"projectId": "nefashot-proj",
 	"storageBucket": "nefashot-proj.appspot.com",
 	"messagingSenderId": "1083253811116",
- "appId": "1:1083253811116:web:68d77ae866b32a2b767c09",
+	"appId": "1:1083253811116:web:68d77ae866b32a2b767c09",
 	"measurementId": "G-8R4V5S49XD",
 	"databaseURL":"https://nefashot-proj-default-rtdb.europe-west1.firebasedatabase.app/"
 }
@@ -22,39 +22,36 @@ db = firebase.database()
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = 'super-secret-key'
 
-
 #start coding
+@app.route('/')
+def set_admin():
+	db.update({"admin":False})
+	return redirect(url_for('home'))
 
-@app.route('/', methods=['GET', 'POST'])
+
+@app.route('/home', methods=['GET', 'POST'])
 def home():
-	if not ('admin' in login_session):
-		login_session['admin']=False
-	login_session['admin']=False
 	return render_template('about.html')
-
 
 @app.route('/blog', methods=['GET', 'POST'])
 def blog():
-	if not ('admin' in login_session):
-		login_session['admin'] = False
 	if request.method == 'POST':
 		if request.form['msg'] != "":
 			message = {"msg" : request.form['msg']}
 			db.child('Messages').push(message)
-			return render_template('blog.html', message = db.child('Messages').get().val(),admin=login_session['admin'])
-	return render_template('blog.html', message = db.child('Messages').get().val(),admin=login_session['admin'])
+			return render_template('blog.html', message = db.child('Messages').get().val(),admin=db.get().val()['admin'])
+	return render_template('blog.html', message = db.child('Messages').get().val(),admin=db.get().val()['admin'])
 
 @app.route('/admin',methods=['POST','GET'])
 def admin():
 	failed_password=False
-	login_session['admin']=False
 	password="123"
 	if request.method=='POST':
 		if request.form['password']==password:
-			login_session['admin']=True
+			db.update({"admin":True})
 		else:
 			failed_password=True
-	return render_template('admin.html',admin=login_session['admin'],failed_password=failed_password)
+	return render_template('admin.html',admin=db.get().val()['admin'],failed_password=failed_password)
 
 @app.route('/remove/<string:i>', methods=['GET', 'POST'])
 def remove(i):
@@ -64,9 +61,9 @@ def remove(i):
 
 
 
-@app.route('/contact',methods=['POST','GET'])
+@app.route('/contact')
 def contact():
-	return render_template('contact.html',schedule=db.child('schedule').get().val(),periods=db.child('periods').get().val())
+	return render_template('contact.html')
 
 @app.route('/volunteer', methods=['POST', 'GET'])
 def volunteer():
@@ -81,9 +78,9 @@ def volunteer():
 		return render_template('info.html', volunteers = db.child("Volunteers").get().val())
 	return render_template('info.html', volunteers = db.child("Volunteers").get().val())
 
-@app.route('/schedule')
+@app.route('/schedule',methods=['POST','GET'])
 def schedule():
-	return render_template('schedule.html')
+	return render_template('schedule.html',schedule=db.child('schedule').get().val(),periods=db.child('periods').get().val(),admin=db.get().val()['admin'])
 #end coding
 
 
