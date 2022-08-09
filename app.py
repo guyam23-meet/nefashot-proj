@@ -27,7 +27,7 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-	if not login_session['admin']:
+	if 'admin' not login_session:
 		login_session['admin']=False
 	return render_template('about.html')
 
