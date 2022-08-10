@@ -25,7 +25,8 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 #start coding
 @app.route('/')
 def set_admin():
-	db.update({"admin":False})
+	login_session['admin']=False
+	# db.update({"admin":False})
 	return redirect(url_for('home'))
 
 
@@ -39,8 +40,8 @@ def blog():
 		if request.form['msg'] != "":
 			message = {"msg" : request.form['msg']}
 			db.child('Messages').push(message)
-			return render_template('blog.html', message = db.child('Messages').get().val(),admin=db.get().val()['admin'])
-	return render_template('blog.html', message = db.child('Messages').get().val(),admin=db.get().val()['admin'])
+			return render_template('blog.html', message = db.child('Messages').get().val(),admin=login_session['admin'])
+	return render_template('blog.html', message = db.child('Messages').get().val(),admin=login_session['admin'])
 
 @app.route('/admin',methods=['POST','GET'])
 def admin():
@@ -48,10 +49,11 @@ def admin():
 	password="123"
 	if request.method=='POST':
 		if request.form['password']==password:
-			db.update({"admin":True})
+			login_session['admin']=True
+			# db.update({"admin":True})
 		else:
 			failed_password=True
-	return render_template('admin.html',admin=db.get().val()['admin'],failed_password=failed_password)
+	return render_template('admin.html',admin=login_session['admin'],failed_password=failed_password)
 
 @app.route('/remove/<string:i>', methods=['GET', 'POST'])
 def remove(i):
@@ -81,13 +83,13 @@ def schedule():
 		periods=db.child('periods').get().val()
 		for i in periods:
 			if request.form[i]!="":
-				db.child('periods').update({i:request.form[i]})
+			db.child('periods').update({i:request.form[i]})
 		schedule=db.child('schedual').get().val()
 		for i in schedule:
 			for k in range(7):
 				if request.form[i]!="":
 					db.child('schedule').child(i).update({k:request.form[i+str(k)]})
-	return render_template('schedule.html',schedule=db.child('schedule').get().val(),periods=db.child('periods').get().val(),admin=db.get().val()['admin'])
+	return render_template('schedule.html',schedule=db.child('schedule').get().val(),periods=db.child('periods').get().val(),admin=login_session['admin'])
 #end coding
 
 
