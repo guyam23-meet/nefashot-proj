@@ -78,9 +78,6 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="/">Festival</a></li>
-<!--           <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li> -->
           <li><a href="/blog" >Blog</a></li>
           <li><a href="/volunteer">Volunteer</a></li>
            <li><a href="/schedule" class="active">Schedule</a></li>
@@ -128,7 +125,7 @@
 			{%endif%}
 		</tr>
 		{%if admin==False%}
-			{%for j in schedule%}
+			{%for j in range(6)%}
 				{%for i in schedule[j]%}
 					<tr>
 						<td align="center" height="50" style="border: 1px solid black;"><b>{{i}}</b></td>
@@ -141,7 +138,7 @@
 				{%endfor%}
 			{%endfor%}
 		{%else%}
-			{%for j in schedule%}
+			{%for j in range(6)%}
 				{%for i in schedule[j]%}
 					<tr>
 						<td align="center" height="50" style="border: 1px solid black;"><b>{{i}}</b></td>

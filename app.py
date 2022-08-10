@@ -85,7 +85,7 @@ def schedule():
 			if request.form[i]!="":
 				db.child('periods').update({i:request.form[i]})
 		schedule=db.child('schedule').get().val()
-		for j in schedule:
+		for j in range(6):
 			for i in schedule[j]:
 				for k in range(7):
 					if request.form[str(j)+i+str(k)]!="":
