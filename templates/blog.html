@@ -25,15 +25,15 @@
   <link href="./static/assets/css/main.css" rel="stylesheet">
   <style type="text/css">
   	#header{
-  		background-color: grey;
+  		background-color: rgba(0, 0, 0, 0.5);
   	}
 
   		.speech {
     position: relative;
-    background: grey;
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     display: inline-block;
-    border-radius: 0;
+    border-radius: 7px;
     padding: 12px 20px;
 }
 .speech:before {
@@ -46,7 +46,7 @@
     top: 0;
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent;
-    border-right: 7px solid grey;
+    border-right: 7px solid rgba(0, 0, 0, 0.5);
     margin: 15px 0 0 -6px;
 }
 
@@ -64,7 +64,7 @@
 	margin-left: 20px;
 }
 .submit{
-  background-color: grey;
+  background-color: rgba(0, 0, 0, 0.5);
   width: 200px;
   height: 50px;
   border-radius: 15px;
@@ -149,7 +149,7 @@ header h2 {
     margin-left: 80px;
 }
 .message.from {
-    background-color: #E5E4E9;
+    background-color: white;
     color: #363636;
     margin-right: 80px;
 }
@@ -172,7 +172,7 @@ header h2 {
     z-index: -1;
 }
 .message.from:before {
-    border-color: #E5E4E9;
+    border-color: black;
     left: -50px;
     transform: rotateY(180deg);
 }
@@ -303,7 +303,7 @@ span {
 	<br>
 	{%if message%}
 	{%for i in message%}
-		<div class = "message from">
+		<div class = "speech">
 
 	
         {%if admin == True%}
