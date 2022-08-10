@@ -52,7 +52,7 @@ def admin():
 			# db.update({"admin":True})
 		else:
 			failed_password=True
-	return render_template('admin.html',admin=login_session['admin'],failed_password=failed_password)
+	return render_template('admin.html',admin=login_session['admin'],failed_password=failed_password, volunteers = db.child("Volunteers").get().val())
 
 @app.route('/remove/<string:i>', methods=['GET', 'POST'])
 def remove(i):
@@ -71,7 +71,7 @@ def volunteer():
 		zipcode = request.form['zip']
 		phone = request.form['phone']
 		email = request.form['your_email']
-		info = {"name": name, "age": street, "zipcode": zipcode, "phone": phone}
+		info = {"name": name, "age": street, "zipcode": zipcode, "phone": phone, "email": email}
 		db.child("Volunteers").push(info)
 		return render_template('info.html', volunteers = db.child("Volunteers").get().val())
 	return render_template('info.html', volunteers = db.child("Volunteers").get().val())

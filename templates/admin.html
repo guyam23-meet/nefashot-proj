@@ -44,6 +44,20 @@
 						<center>
 							<a href="/home">back to home</a>
 						</center>
+							{%if admin == True%}
+							<h3>Volunteers that have signed up:</h3>
+							{%for i in volunteers%}
+							<p>Volunteer</p>
+							<li>{{volunteers[i]['name']}}</li>
+							<li>{{volunteers[i]['age']}}</li>
+							<li>{{volunteers[i]['zipcode']}}</li>
+							<li>{{volunteers[i]['phone']}}</li>
+							<li>{{volunteers[i]['email']}}</li>
+
+							<br>
+						
+							{%endfor%}
+							{%endif%}
 					</div>
 				</div>
 			</div>
