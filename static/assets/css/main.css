@@ -667,6 +667,10 @@ section {
   border-radius: 4px;
 }
 
+.submit{
+  background-color: blue;
+}
+
 .get-started .php-email-form button[type=submit]:hover {
   background: rgba(254, 185, 0, 0.8);
 }
