@@ -66,7 +66,7 @@
 
 
 </head>
-<body style="background-image:'yellow.jpg'">
+<body style="background-image:url('static/yellow.jpg')">
 
 
 <header id="header" class="header d-flex align-items-center">
@@ -128,26 +128,30 @@
 			{%endif%}
 		</tr>
 		{%if admin==False%}
-			{%for i in schedule%}
-				<tr>
-					<td align="center" id="{{i}}" height="50" style="border: 1px solid black;"><b>{{i}}</b></td>
-					{%for k in range(7)%}
-						<td align="center" height="50" style="border: 1px solid black;">
-							{{schedule[i][k]}}
-						</td>
-					{%endfor%}
-				</tr>
+			{%for j in schedule%}
+				{%for i in schedule[j]%}
+					<tr>
+						<td align="center" height="50" style="border: 1px solid black;"><b>{{i}}</b></td>
+						{%for k in range(7)%}
+							<td align="center" height="50" style="border: 1px solid black;">
+								{{schedule[j][i][k]}}
+							</td>
+						{%endfor%}
+					</tr>
+				{%endfor%}
 			{%endfor%}
 		{%else%}
-			{%for i in schedule%}
-				<tr>
-					<td align="center" height="50" style="border: 1px solid black;"><b>{{i}}</b></td>
-					{%for k in range(7)%}
-						<td align="center"height="50" style="border: 1px solid black;">
-							<input type="text" name="{{i}}{{k}}" placeholder="{{schedule[i][k]}}" style="width:90%;">
-						</td>
+			{%for j in schedule%}
+				{%for i in schedule[j]%}
+					<tr>
+						<td align="center" height="50" style="border: 1px solid black;"><b>{{i}}</b></td>
+						{%for k in range(7)%}
+							<td align="center"height="50" style="border: 1px solid black;">
+								<input type="text" name="{{j}}{{i}}{{k}}" placeholder="{{schedule[j][i][k]}}" style="width:90%;">
+							</td>
+						{%endfor%}
+					</tr>
 					{%endfor%}
-				</tr>
 			{%endfor%}
 		{%endif%}
 		{%if admin==True%}

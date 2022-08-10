@@ -26,7 +26,6 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 @app.route('/')
 def set_admin():
 	login_session['admin']=False
-	# db.update({"admin":False})
 	return redirect(url_for('home'))
 
 
@@ -86,10 +85,11 @@ def schedule():
 			if request.form[i]!="":
 				db.child('periods').update({i:request.form[i]})
 		schedule=db.child('schedule').get().val()
-		for i in schedule:
-			for k in range(7):
-				if request.form[i+str(k)]!="":
-					db.child('schedule').child(i).update({k:request.form[i+str(k)]})
+		for j in schedule:
+			for i in schedule[j]:
+				for k in range(7):
+					if request.form[str(j)+i+str(k)]!="":
+						db.child('schedule').child(j).child(i).update({k:request.form[str(j)+i+str(k)]})
 	return render_template('schedule.html',schedule=db.child('schedule').get().val(),periods=db.child('periods').get().val(),admin=login_session['admin'])
 #end coding
 
