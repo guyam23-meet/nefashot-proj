@@ -58,9 +58,6 @@ def remove(i):
 	db.child('Messages').child(i).remove()
 	return redirect(url_for('blog'))
 
-
-
-
 @app.route('/contact')
 def contact():
 	return render_template('contact.html')
@@ -73,7 +70,7 @@ def volunteer():
 		zipcode = request.form['zip']
 		phone = request.form['phone']
 		email = request.form['your_email']
-		info = {"name": name, "street": street, "zipcode": zipcode, "phone": phone}
+		info = {"name": name, "age": street, "zipcode": zipcode, "phone": phone}
 		db.child("Volunteers").push(info)
 		return render_template('info.html', volunteers = db.child("Volunteers").get().val())
 	return render_template('info.html', volunteers = db.child("Volunteers").get().val())
@@ -81,8 +78,15 @@ def volunteer():
 @app.route('/schedule',methods=['POST','GET'])
 def schedule():
 	if request.form=='POST':
-		period=db.child('periods').get().val()
-		
+		periods=db.child('periods').get().val()
+		for i in periods:
+			if request.form[i]!="":
+				db.child('periods').update({i:request.form[i]})
+		schedule=db.child('schedual').get().val()
+		for i in schedule:
+			for k in range(7):
+				if request.form[i]!="":
+					db.child('schedule').child(i).update({k:request.form[i+str(k)]})
 	return render_template('schedule.html',schedule=db.child('schedule').get().val(),periods=db.child('periods').get().val(),admin=db.get().val()['admin'])
 #end coding
 

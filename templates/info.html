@@ -2,15 +2,278 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Sign_Up</title>
+	<title>Volunteer</title>
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="./static/assets/img/favicon.png" rel="icon">
+  <link href="./static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="./static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="./static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="./static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="./static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="./static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="./static/assets/css/main.css" rel="stylesheet">
 	<!-- Font-->
+<<<<<<< HEAD
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+=======
+	<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+	<style type="text/css">
+$brand-primary: #0262c3;
+$brand-secondary: #00aeef;
+
+
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+  * {
+    box-sizing: border-box;
+}
+    
+    &:focus{
+      outline: none;
+    }
+  
+
+
+body {
+  background: linear-gradient(to bottom right, #fff, #f1f1f1);
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: .35em;
+}
+
+p {
+  font-style: italic;
+  font-weight: 400;
+  color: #999;
+}
+  
+  a {
+    color: $brand-primary;
+    transition: .5s;
+}
+    &:hover, :focus {
+      color: #000;
+    }
+  
+
+
+div.form-wrapper {
+  position: relative;
+  width: 40em;
+  padding: 1em;
+  margin: 5em auto;
+  border-radius: 1.5em;
+  display: table;
+  text-align: center;
+  box-shadow: 15px 21px 62px -9px rgba(145,145,145,1);
+
+}
+
+form {
+  position: relative;
+  z-index: 2;
+  padding: 11.5em 1em 2em 1em;
+  margin: 1em;
+  border: 1px solid rgba(211, 211, 211, .5);
+  border-radius: 1em;
+}
+
+
+header {
+  position: absolute;
+  width: 100%;
+  height: 11.5em;
+  padding: 1.25em 2em 1em 2em;
+  border-radius: 1em 1em 0 0;
+  top: 0; left: 0; 
+  /*background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1239626/camera-1600x1000.jpg'); */
+  background-color: grey;
+  background-size: 100%;
+  background-position: bottom center;
+}
+  
+  span {
+    position: absolute;
+    display: table;
+    padding: .75em .55em .65em .55em;
+    color: #fff;
+    background: $brand-secondary;
+    right: 47%; bottom: -1.25em; left: 47%; 
+    border-radius: 10em;
+  }
+
+
+
+label {
+  display: block;
+  margin: -1.5em auto 0 auto;
+  position: relative;
+  width: 60%;
+  text-indent: -99999px;  
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: .5em 1em;
+  margin: .5em auto;
+  border: none;
+  border-radius: 9em;
+  font-weight: 300;
+  
+  transition: all .50s ease-in-out;
+  outline: none;
+  }
+  &:focus {
+    box-shadow: 0 0 10px $brand-secondary;
+  }
+  
+  
+}
+
+::placeholder {
+  color: #888;
+}
+
+.btn, input.btn {
+  max-width: 15em;
+  display: inline-block;
+  border-radius: 9em;
+  padding: .5em 1em;
+  background-color: grey;
+  color: #fff;
+  cursor: pointer;
+  transition: .25s;
+  font-weight: bold;
+}
+   
+  &:hover, &:focus {
+    background: blue;
+
+  }
+
+
+.btn.in-signon {
+  border: 1px solid #ccc;
+  background: none;
+  font-weight: 200;
+  text-decoration: none;
+  position: relative;
+  z-index: 3;
+}
+  
+  &:hover {
+    background: #fff;
+    color: $brand-primary;
+    border: 1px solid #fff;
+  }
  
+  &:before {
+    font-family: "FontAwesome";
+    font-size: 1.2em;
+    content: "\f0e1";
+    padding: .5em .5em .5em .25em;
+  }
+
+
+
+input:required:invalid:not(#submit), input:focus:invalid:not(#submit) {
+  transition: .5s;
+  background: #e3e3e3 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAAEwO1XwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhQTFRFOYTQoMTo0+T1bKTcAGbMwNjw7/X7////+2vE7wAAAAh0Uk5T/////////wDeg71ZAAAEcElEQVR42lTOwQoAMAgCUA8O//+PV0obdagebCHUdQjP7kxFWdxRI69qsaQhzkOLS1ja/758c8hosjDJNMF0BRDUtSyYjmZgZ4Q4kwXFkSworkLhMKK6FxcHzbEM0KABBh3U4RguZQbSAAHopKIlgEEQZDea///HqytE2+ZboiagxSdQRWyd0yjkcqWethq8BMiU7lRoyH92SJA/5P5CLmzaJ9QnWXstTRVkHRrnxIF5chlUzf0RgJOy3QEQBKEoKR/v/8ZNmyAIrfUzzyq99yD43172CBJfAkd8nmQEX7NG3ntS+de67rsPQvGgjDoiMZ2nsZkoSNZc2sLYeklmc70k9INASfA7GbFwaog5iu381sqaNwA6TOC1WqX4q0qaCZa23cwQPiwwqyiOqdwC0FotWRCCMCyVQu9/Y+fNE+2Pjwu7NhTSJDUw04o7mvwX8KSkhRzSeFoIEJchpf6KwMkj4/uRjdCALJlRJqLIv0aog3sAMNcg0QHaZFaPr9FzhGVRnYtLgMseqg+w20RhTPR8DaEXENp+y3GPb7tNlx9uQdY9BD8mz1ItRfw1hrVkwGyXTR271m0PSfcTxnY5rJF5WRTjokwBLU+Y+BeR3TVxYtUpUSKLpwDUl8kSgzAMQ0W98P9/XGZKaRbHVo7lyjzwyIksR5fX5QNBwvZOyFgbvEBSqSIEK7lsgRyZxiFSNPI1I3Tzgzxzy3s9kh6YlUCO+cWUjWx5VbqTLKn1ezAsfP2L1RXT8iKj/SaaFnptFm2Yq5ysG0mmjF96a0rKOSye6h8ErImfvI3/Bh9YxB+EMuS2MsP2qJQNRL4TmUdsmJX/jMg+gkEx2+8LaOTkk9JzfuFsZTpFOCUlPi6EzEpduqB+gxBRoiwdra/2F5xD7NGK0GD3TTtyS4TB24/MxJs1oYtDthwv/crVTWNYnITylSeb4yj3sEkZdheTOJAIE+DG2FOlhDBcocg8YYTr1lcErX0L0K65JDkMg0C0MQbf/8aZmkolsgUSSMxuWCaLpw9C3ciBM38psSO7foSLRmrT5PTyGQiWZQjhzASlIcrnQrDGIWuEAQcDX78WOKYQOguChhAfwdQN8Bhkhn8anYXCMEEFMztxq0WYepxUssNwk8ZKIdJgGCy0PCE8GkkojJXgOwS7CBuDFoJ5rofisCmwGHwtB1sUGH/ItRFkDBj9z1uM/ir/dWtay+gp2rQcE8233Ipxo3C399xVCl8PaZSc5XhkMgGDdlRRIj8YNavV7QqKU8tMsH9IDoK/3/hv+z/uutOnkSHlVaXLYMGzBug+Q59XCrpNKi9d1L4WVFH6IoLe/KGybn2eMKVAqbh2VS7vOwMqyqu2Y2Dov6XJ9MKLWnEn5766MySk3GWqToT5/DaEP04MJTMHp2MaQLb8yYG8OxnYcHWclme0QOq1ERCxWkhYRmaSdzADcdM4fbkq8KWWjz+wQ7BSHyE5GyZQrrci6fn4eYi0q81MIdrv0hmJaXpiw5eH0C1rAaKwfnoBva3enFBJIhUAAAAASUVORK5CYII=') no-repeat right .5em top .5em;
+  background-size: 6%;
+  box-shadow: none;
+}
+
+input:required:valid:not(#submit), input:focus:valid:not(#submit) {
+  transition: .5s;
+  background: #e3e3e3  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAAEwO1XwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhQTFRFaKHbosXp1+b2AGbM7/X7NIHPwNjw////PVTR9gAAAAh0Uk5T/////////wDeg71ZAAADUElEQVR42nTOSQoAMAwCQEES///jpg1dPFQIYU4KzSRjfdSx0yIPcVE0EWmiKUz6yvr4bmEv0x6mIYDAPHZWZhYMRzOwM+JwJAMzpRx2HBxkhyO5FMQACCCIQ9mRHMUMFWFAE2ZG8RwzFoDqOVQpBnZmHAA1+HFHE+5IIkqGgQG7o4E6EFGH7lVo6KCpBwGAAIKFG4gJFGRE4rKja2JFkUG1hBEhw0xCWKMlflTnMbCzMeOKH2Zc8cOCUwZXUDPiiZ/BK8OCJwxwyLDiCmtIZsKWfllwxRwjrthmQqQQFoxUgEhVbOjZlB0gAHHlkgQwCMJQKCj3v3GdutHyqVk1W+fpiElcnDilJJHHzFv0taO7doiolGoOYfnWhqicqYhOKi36KzV6GrZcfSCEIVVJptMm9JAqNH8jjCPwxIiM8XexhhGPxxpETCd3hAj/p1TXHuQj30d/XR2uqJT4oGDM9dgYxjpBUrd+C8B8GaVACMNQMMG+ev8bK+IK1tRmRBZ/lanFNi+TAFnX0V4ZNXzbPmj3pjJAdPerIkT9jIgRTyTlGVHm5Nnpe99nshcmG649N8rcZCPlsiFlwiWGcn9DfMK1jwLG+5Z3G0ow+QpHVlnCMT6bOIJ7RX3QKjmi77bXjyL6y7nMnOkPRS8qnHNR5HEhjvDo044Y+ggUeD+QArb16y81v62ji3meICPPpSPXLJGexSwWEssIXKs9I0sI5coGzhMq3Gl8lV8VbhGgXTNYYhCEgeiGEPz/P27t2I7aIIhZp4fmLm8I0WwWXdW3X0RqLeWpC3PHAg1IXy/xJWgXRE51RC9NDUge+La7IrwKGSMsdZW7IEmvhaUmRDQg5BASgjh+G5MGRvJ9IdPQMGeaFA2PsodACYEtxFSJFDAZm4ZKYywUsM5jnTFQ6uprWstKjjxgOQ4kDPSNzDJa+BCB8SGA3hB/yA9Cbqguu6O8BIUPKZjo+bLzntnItx4TeyuvO152Q1muMKkJK9X/DEKb71sSCZXxFneFl6uVTGWc/kdyY6IpbnjzSbLo0nUnLYk+cX9mFAKi4+YqYC715vhrZ2O515EYfW0q3geuWTcbQhlyifotnCP7pmlFzWZXgwTJF/2uVfoEa2VjJlJ6n30Aa9qTrxypQnIAAAAASUVORK5CYII=') no-repeat right .5em top .5em;
+    background-size: 6%;
+
+}
+
+input[type=text], {
+ 
+}
+ 
+
+	</style>
+ 
+>>>>>>> 66ea0a981fad7e14227f9ed9e41e5cbc0bc8faa9
 </head>
-<body class="form-v10">
-	<form action="/volunteer" class="mx-1 mx-md-4" method="POST">
+<body>
+	<header class="header d-flex align-items-center"> 
+  	 <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <!--<a href="index.html" class="logo d-flex align-items-center">-->
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Nefashot.<span></span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/">Festival</a></li>
+<!--           <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li> -->
+          <li><a href="/blog">Blog</a></li>
+
+
+
+
+          <li><a href="/volunteer" class = "active">Volunteer</a></li>
+           <li><a href="/schedule">Schedule</a></li>
+
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+</header>
+<br><br><br><br><br><br><br>
+<div class="form-wrapper">
+  <header> 
+    <h1>Register to be a Volunteer</h1>
+  </header>
+  <form action="/volunteer" method = "POST">
+    <label for="name">Name
+    <input name="full_name" id="name" placeholder="Full Name" type="text" required></label>
+    <label for="age">Age
+    <input name="street" id="age" placeholder="Age" type="text" required></label>
+      <label for="zip">Zip
+    <input name="zip" id="zip" placeholder="Zip Code" type="text" required></label>
+    <label for="phone">Phone
+    <input name="phone" id="phone" placeholder="Phone Number" type="text" required></label>
+    <label for="email">E-Mail Address
+    <input name="your_email" id="email" placeholder="you@yourAddress.com" type="email" required></label>
+    <input type="submit" value="Register" id="submit" class="btn"/>
+  </form>
+</div>
+
+
+	<!--<form action="/volunteer" class="mx-1 mx-md-4" method="POST">
 		<center>
 	
 				<div class="d-flex flex-row align-items-center mb-4">
@@ -53,6 +316,13 @@
 				</div>
 			</form>
 		</center>
-		
+<<<<<<< HEAD
+		<center>
+			<a href="/home">Back Home</a>
+		</center>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+=======
+		
+</body> This templates was made by Colorlib (https://colorlib.com) -->
+>>>>>>> 66ea0a981fad7e14227f9ed9e41e5cbc0bc8faa9
 </html>
