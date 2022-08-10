@@ -110,19 +110,19 @@
 		{%endif%}
 		<tr>
 			<td align="center" height="50"
-				width="100"><br>
+				width="100" style="border: 1px solid black;"><br>
 				<b>Day/Period</b></br>
 			</td>
 			{%if admin==False%}
 				{%for i in periods%}
-					<td align="center" height="50" width="100">
+					<td align="center" height="50" width="100" style="border: 1px solid black;">
 					<b>{{i}}<br>{{periods[i]}}</b>
 					</td>
 				{%endfor%}
 			{%else%}
 				
 				{%for i in periods%}
-					<td align="center" height="50" width="100">
+					<td align="center" height="50" width="100" style="border: 1px solid black;">
 						<b>{{i}}</b>
 						</br>
 						<input type="text" name="{{i}}" placeholder="{{periods[i]}}" style="width:90%;">
@@ -133,9 +133,9 @@
 		{%if admin==False%}
 			{%for i in schedule%}
 				<tr>
-					<td align="center" id="{{i}}" height="50"><b>{{i}}</b></td>
+					<td align="center" id="{{i}}" height="50" style="border: 1px solid black;"><b>{{i}}</b></td>
 					{%for k in range(7)%}
-						<td align="center" height="50">
+						<td align="center" height="50" style="border: 1px solid black;">
 							{{schedule[i][k]}}
 						</td>
 					{%endfor%}
@@ -144,9 +144,9 @@
 		{%else%}
 			{%for i in schedule%}
 				<tr>
-					<td align="center" height="50"><b>{{i}}</b></td>
+					<td align="center" height="50" style="border: 1px solid black;"><b>{{i}}</b></td>
 					{%for k in range(7)%}
-						<td align="center"height="50">
+						<td align="center"height="50" style="border: 1px solid black;">
 							<input type="text" name="{{i}}{{k}}" placeholder="{{schedule[i][k]}}" style="width:90%;">
 						</td>
 					{%endfor%}

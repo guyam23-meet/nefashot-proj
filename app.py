@@ -79,15 +79,16 @@ def volunteer():
 
 @app.route('/schedule',methods=['POST','GET'])
 def schedule():
-	if request.form=='POST':
+	if request.method=='POST':
 		periods=db.child('periods').get().val()
+		print('test')
 		for i in periods:
 			if request.form[i]!="":
 				db.child('periods').update({i:request.form[i]})
-		schedule=db.child('schedual').get().val()
+		schedule=db.child('schedule').get().val()
 		for i in schedule:
 			for k in range(7):
-				if request.form[i]!="":
+				if request.form[i+str(k)]!="":
 					db.child('schedule').child(i).update({k:request.form[i+str(k)]})
 	return render_template('schedule.html',schedule=db.child('schedule').get().val(),periods=db.child('periods').get().val(),admin=login_session['admin'])
 #end coding
